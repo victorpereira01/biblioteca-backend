@@ -13,20 +13,6 @@ mongoose.connect(
 
 requireDir('./src/models');
 
-const Obra = mongoose.model('Obra');
+app.use('/', require('./src/routes'));
 
-
-app.get('/', (req, res) => {
-    Obra.create({
-        titulo: 'Harry Potter',
-        editora: 'Rocco',
-        foto: 'https://i.imgur.com/UH3IPXw.jpg',
-        autores: [
-            'JKRowling',
-            'Tony Hawk'
-        ]
-    })
-res.send("HELLO");
-})
-
-app.listen(3001);
+app.listen(3001); 
